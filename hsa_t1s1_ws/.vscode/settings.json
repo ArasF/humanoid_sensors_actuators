@@ -1,0 +1,7 @@
+{
+    "files.associations": 
+    {
+        "*.S": "avr",
+        "io.h": "c"
+    },
+}

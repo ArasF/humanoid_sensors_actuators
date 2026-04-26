@@ -1,0 +1,43 @@
+// For format details, see https://aka.ms/devcontainer.json.
+{
+    "name": "hsa_t1s1_ws",
+    "image": "avr:focal-vscode",
+
+    "containerEnv" : {
+        "CONT_PWD" : "${containerWorkspaceFolder}"
+    },
+
+    "remoteUser": "devel",
+
+    "runArgs": [
+        "--name", "${containerWorkspaceFolderBasename}_devcont",
+        "--hostname", "${containerWorkspaceFolderBasename}_devcont",
+        "--privileged"
+    ],
+
+    "mounts": [
+        { 
+            "source": "/dev", 
+            "target": "/dev",
+            "type": "bind"
+        }
+    ],
+
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.cpptools",
+                "ms-vscode.cpptools-extension-pack",
+                "cschlosser.doxdocgen",
+                "shd101wyy.markdown-preview-enhanced",
+                "ms-vscode.hexeditor",
+                "rockcat.avr-support",
+                "ms-vscode.cmake-tools",
+                "twxs.cmake"
+            ],
+			"settings": {
+				"remote.autoForwardPorts": false
+			}
+        }
+    }
+}

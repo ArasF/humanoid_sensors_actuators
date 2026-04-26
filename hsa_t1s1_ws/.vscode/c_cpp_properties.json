@@ -1,0 +1,20 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/usr/lib/avr/include/**",
+                "/opt/avr/include/**"
+            ],
+            "defines": [
+                "__AVR_ATmega32__"
+            ],
+            "compilerPath": "/usr/bin/avr-gcc",
+            "cStandard": "c99",
+            "cppStandard": "c++03",
+            "intelliSenseMode": "linux-gcc-x64"
+        }
+    ],
+    "version": 4
+}

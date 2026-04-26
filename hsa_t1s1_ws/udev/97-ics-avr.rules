@@ -1,0 +1,4 @@
+# ICS, AVRISP mkII 
+
+# Permissions
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="03eb", ATTRS{idProduct}=="2104", MODE="0666", GROUP="users"
