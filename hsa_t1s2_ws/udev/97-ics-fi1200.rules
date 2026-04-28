@@ -1,0 +1,9 @@
+# ITR, FI1200
+
+# Permissions
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6014", ATTRS{product}=="SkinCellAdapter", MODE="0666", GROUP="users"
+
+# Unbind serial driver
+#SUBSYSTEMS=="usb", ATTRS{product}=="SkinCellAdapter", ACTION=="add", DRIVER=="ftdi_sio", RUN+="/bin/sh -c 'echo $kernel > /sys/bus/usb/drivers/ftdi_sio/unbind'"
+
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6014", ATTR{interface}=="SkinCellAdapter", ACTION=="add", RUN+="/bin/sh -c 'echo $kernel > /sys/bus/usb/drivers/ftdi_sio/unbind'"
