@@ -1,3 +1,5 @@
+#define F_CPU 1000000UL
+
 // Get register definitions with auto complete
 #include <atmega32/io.h>
 
@@ -5,9 +7,21 @@
 #include <util/delay.h>
 
 
-int main (void)
+int main(void)
 {
+    DDRC |= (1 << PC0) | (1 << PC1) | (1 << PC2);
 
-    // Should never be reached
+    while (1) {
+        PORTC = (PORTC & ~((1 << PC0) | (1 << PC1) | (1 << PC2))) | (1 << PC0);
+        _delay_ms(1000);
+
+        PORTC = (PORTC & ~((1 << PC0) | (1 << PC1) | (1 << PC2))) | (1 << PC1);
+        _delay_ms(1000);
+
+        PORTC = (PORTC & ~((1 << PC0) | (1 << PC1) | (1 << PC2))) | (1 << PC2);
+        _delay_ms(1000);
+    }
+
     return 0;
 }
+
