@@ -1,0 +1,11 @@
+build
+build-*
+install
+*~
+*.txt.user
+*.pro.user
+doxy/out
+*.elf
+devel
+__pycache__
+adc_rcsc.csv
